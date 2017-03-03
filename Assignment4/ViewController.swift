@@ -37,6 +37,7 @@ class ViewController: UIViewController, UITextFieldDelegate, UIPickerViewDelegat
     @IBOutlet weak var placeCategory: UITextField!
     @IBOutlet weak var placeDescription: UITextField!
     
+    @IBOutlet weak var placeImage: UITextField!
     @IBOutlet weak var placePicker: UIPickerView!
     @IBOutlet weak var placeDisPic: UITextField!
     
@@ -60,6 +61,8 @@ class ViewController: UIViewController, UITextFieldDelegate, UIPickerViewDelegat
         placeCategory.text = "\(placelist.places[selectedPlace]!.category)"
         placeDescription.text = "\(placelist.places[selectedPlace]!.description)"
             
+            placeImage.text = "\(placelist.places[selectedPlace]!.image)"
+            
         }
         
         self.title = placelist.places[selectedPlace]?.name
@@ -72,6 +75,37 @@ class ViewController: UIViewController, UITextFieldDelegate, UIPickerViewDelegat
     let plc:[String] = selectedPlace.components(separatedBy: " ")
     placeDisPic.text = plc[0]
         
+        
+    }
+    
+    
+    @IBAction func updateButton(_ sender: Any)
+    {
+        let place1: String = placeName.text!
+        
+        let addresstitle1: String = placeAddressTitle.text!
+        
+        let addressstreet1: String = placeAddressStreet.text!
+        
+        let elevation1: Double = Double(placeElevation.text!)!
+        
+        let latitude1: Double = Double(placeLatitude.text!)!
+        
+        let longitude1: Double = Double(placeLongitude.text!)!
+        
+        let category1: String = placeCategory.text!
+        
+        let description1: String = placeDescription.text!
+        
+        let image1: String = placeImage.text!
+        
+        let newplace: Places = Places(address_title: addresstitle1, address_street: addressstreet1, elevation: elevation1, latitude: latitude1, longitude: longitude1, name: place1, image: image1, description: description1, category: category1)
+        
+        self.placelist.places[place1] = newplace
+        
+        self.placelist.names = Array(self.placelist.places.keys).sorted()
+        
+        print(placelist.names)
         
     }
 
@@ -167,5 +201,20 @@ class ViewController: UIViewController, UITextFieldDelegate, UIPickerViewDelegat
         let bearng = atan2(n, m)
         bearing.text = String(bearng)
     }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+    {
+        NSLog("seque identifier is \(segue.identifier)")
+        
+        if segue.identifier == "updateIdentifier"
+        {
+            let n = segue.destination as! UINavigationController
+            let v = n.topViewController as! PlaceViewController
+            v.placelist = self.placelist
+            
+        }
+    }
+
 }
 
