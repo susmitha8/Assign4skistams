@@ -198,7 +198,7 @@ class ViewController: UIViewController, UITextFieldDelegate, UIPickerViewDelegat
         
         let n = (sin(lonB - lonA) * cos(latB))
         let m = ((cos(latA)*sin(latB)) - (sin(latA)*cos(latB)*(lonB-lonA)))
-        let bearng = atan2(n, m)
+        let bearng = atan2(n, m).radiansToDegrees
         bearing.text = String(bearng)
     }
     

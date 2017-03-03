@@ -15,7 +15,7 @@
 		D859B3F41E66593C00225B54 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D859B3F21E66593C00225B54 /* LaunchScreen.storyboard */; };
 		D859B3FF1E66593C00225B54 /* Assignment4Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D859B3FE1E66593C00225B54 /* Assignment4Tests.swift */; };
 		D859B40A1E66593C00225B54 /* Assignment4UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D859B4091E66593C00225B54 /* Assignment4UITests.swift */; };
-		D859B4181E6661BC00225B54 /* Places.swift in Sources */ = {isa = PBXBuildFile; fileRef = D859B4171E6661BC00225B54 /* Places.swift */; };
+		D859B4181E6661BC00225B54 /* PlaceDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = D859B4171E6661BC00225B54 /* PlaceDescription.swift */; };
 		D859B41A1E666D0000225B54 /* places.json in Resources */ = {isa = PBXBuildFile; fileRef = D859B4191E666D0000225B54 /* places.json */; };
 		D859B41E1E66892700225B54 /* PlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D859B41D1E66892700225B54 /* PlaceViewController.swift */; };
 /* End PBXBuildFile section */
@@ -52,7 +52,7 @@
 		D859B4051E66593C00225B54 /* Assignment4UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Assignment4UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D859B4091E66593C00225B54 /* Assignment4UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assignment4UITests.swift; sourceTree = "<group>"; };
 		D859B40B1E66593C00225B54 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D859B4171E6661BC00225B54 /* Places.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Places.swift; sourceTree = "<group>"; };
+		D859B4171E6661BC00225B54 /* PlaceDescription.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceDescription.swift; sourceTree = "<group>"; };
 		D859B4191E666D0000225B54 /* places.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = places.json; sourceTree = "<group>"; };
 		D859B41D1E66892700225B54 /* PlaceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -111,7 +111,7 @@
 				D859B3F01E66593C00225B54 /* Assets.xcassets */,
 				D859B3F21E66593C00225B54 /* LaunchScreen.storyboard */,
 				D859B3F51E66593C00225B54 /* Info.plist */,
-				D859B4171E6661BC00225B54 /* Places.swift */,
+				D859B4171E6661BC00225B54 /* PlaceDescription.swift */,
 				D859B4191E666D0000225B54 /* places.json */,
 				D859B41D1E66892700225B54 /* PlaceViewController.swift */,
 				D826F8B01E68DCE100EBD4AD /* PlaceLibrary.swift */,
@@ -276,7 +276,7 @@
 				D859B3EA1E66593C00225B54 /* AppDelegate.swift in Sources */,
 				D859B41E1E66892700225B54 /* PlaceViewController.swift in Sources */,
 				D826F8B11E68DCE100EBD4AD /* PlaceLibrary.swift in Sources */,
-				D859B4181E6661BC00225B54 /* Places.swift in Sources */,
+				D859B4181E6661BC00225B54 /* PlaceDescription.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

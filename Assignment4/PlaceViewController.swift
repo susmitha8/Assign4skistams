@@ -24,6 +24,8 @@ class PlaceViewController: UITableViewController {
         //let addButton = UIBarButtonItem(barButtonSystemItem: <#T##UIBarButtonSystemItem#>, target: self, action: #selector(PlaceViewController.addPlaces))
         //self.navigationItem.rightBarButtonItem = addButton
         
+        self.title = "Place Library"
+        
     }
     
     
