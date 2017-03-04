@@ -40,7 +40,7 @@ class PlaceViewController: UITableViewController {
             let selectedPlace:String = placelist.names[indexPath.row]
             print("deleting the place \(selectedPlace)")
             placelist.places.removeValue(forKey: selectedPlace)
-            placelist.names = Array(placelist.places.keys)
+            placelist.names = Array(placelist.places.keys).sorted()
             tableView.deleteRows(at: [indexPath], with: .fade)
             // don't need to reload data, using delete to make update
         }

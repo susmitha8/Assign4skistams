@@ -71,7 +71,7 @@ class ViewController: UIViewController, UITextFieldDelegate, UIPickerViewDelegat
     placePicker.delegate = self
     placePicker.removeFromSuperview()
     placeDisPic.inputView = placePicker
-    selectedPlace = (placelist.names.count > 0) ? placelist.names[0] : ""
+    //selectedPlace = (placelist.names.count > 0) ? placelist.names[0] : "unknown unknown"
     let plc:[String] = selectedPlace.components(separatedBy: " ")
     placeDisPic.text = plc[0]
         
@@ -105,8 +105,7 @@ class ViewController: UIViewController, UITextFieldDelegate, UIPickerViewDelegat
         
         self.placelist.names = Array(self.placelist.places.keys).sorted()
         
-        print(placelist.names)
-        
+       
     }
 
     override func didReceiveMemoryWarning() {
@@ -138,19 +137,17 @@ class ViewController: UIViewController, UITextFieldDelegate, UIPickerViewDelegat
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int)
     {
         selPlaceP = placelist.names[row]
-        let tokens:[String] = selectedPlace.components(separatedBy: " ")
+        let tokens:[String] = selPlaceP.components(separatedBy: " ")
         self.placeDisPic.text = tokens[0]
         self.placeDisPic.resignFirstResponder()
-        //print(selectedPlace)
         distCalc(p: selPlaceP)
         bearingCalc(q: selPlaceP)
     }
     
     // UIPickerViewDelegate method
     func pickerView (_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        let plc:String = placelist.names[row]
-        let tokens:[String] = plc.components(separatedBy: " ")
-        return tokens[0]
+        
+        return placelist.names[row]
         
     }
     
@@ -168,10 +165,14 @@ class ViewController: UIViewController, UITextFieldDelegate, UIPickerViewDelegat
     func distCalc(p: String)
     {
         let latA = (placelist.places[selectedPlace]!.latitude).degreesToRadians
+        print(latA)
         let latB = (placelist.places[p]!.latitude).degreesToRadians
+        print(latB)
         
         let lonA = (placelist.places[selectedPlace]!.longitude).degreesToRadians
+        print(lonA)
         let lonB = (placelist.places[p]!.longitude).degreesToRadians
+        print(lonB)
         
         let latitudeA = latB - latA
         let longitudeA = lonB - lonA
@@ -182,8 +183,10 @@ class ViewController: UIViewController, UITextFieldDelegate, UIPickerViewDelegat
         
         let dis = sin(latitudeA/2) * sin(latitudeA/2) + sin(longitudeA/2) * sin(latA) * cos(latB)
         let x = 2 * atan2(sqrt(dis), sqrt(1-dis))
+        print(x)
         
         let z = R * x
+        print(z)
         
         gcd.text = String(z)
     }
